@@ -1,0 +1,14 @@
+<div class="pickether-card">
+    <h2>{{ title }}</h2>
+    <p>Mis en ligne le {{ createdDate }}</p>
+    <img [src]="urlImg" [alt]="title">
+    <!--  les valeurs associées à des attributs ne seront pas toujours des strings il est préférable d'avoir une syntaxe unique pour une fonctionnalité. On va donc préférer les crochets  []  : -->
+    <p>{{ description }}</p>
+    <p>
+        <button (click)="onLike()">
+            {{ txtButtonLike }}
+        </button>
+        
+        🧑🏿‍🚀 {{ like }}
+    </p>
+</div>
