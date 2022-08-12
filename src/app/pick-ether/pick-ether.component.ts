@@ -18,7 +18,7 @@ export class PickEtherComponent  implements OnInit{
   // constructor() { }
 
   ngOnInit(): void {
-    this.title = "Fraisouu";
+    this.title = "Fraisouw";
     this.description = "Palmier de secours";
     this.createdDate = new Date(); // s'auto Datera à l'instant ou l'instance est généré
     this.like = 8;
