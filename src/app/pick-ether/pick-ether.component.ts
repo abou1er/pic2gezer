@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { pickEther } from '../models/pick-ether.model';
 
 @Component({
   selector: 'app-pick-ether',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pick-ether.component.scss']
 })
 export class PickEtherComponent  implements OnInit{
+
+@Input() pickEther! : pickEther;
 
   title : any = String;   //peut être déclaré de ces 2 manières
   description!: string;
@@ -31,10 +34,10 @@ export class PickEtherComponent  implements OnInit{
   onLike(){  // event-bidind  method qui agi pour créer un événement le nom de la methode commence par 'on'
     //this.like++     // like type number Va s'incrémenter à chaque appel. tel quel non limité 
     if (this.txtButtonLike === "Like it Jusqu'à la lune"){
-      this.like++;    //like limité à une fois
+      this.pickEther.like++;    //like limité à une fois
       this.txtButtonLike = "J'aime moins";  //puis je change sa valeur
     } else {
-      this.like--;
+      this.pickEther.like--;
       this.txtButtonLike =  "Like it Jusqu'à la lune";
     }
     
