@@ -3,6 +3,7 @@
     <p>Mis en ligne le {{  pickEther.createdDate }}</p>
     <img [src]=" pickEther.urlImg" [alt]=" pickEther.title">
     <!--  les valeurs associées à des attributs ne seront pas toujours des strings il est préférable d'avoir une syntaxe unique pour une fonctionnalité. On va donc préférer les crochets  []  : -->
+    <p *ngIf="pickEther.location">   Photo prise     {{  pickEther.location }}</p>
     <p>{{  pickEther.description }}</p>
     <p>
         <button (click)="onLike()">
