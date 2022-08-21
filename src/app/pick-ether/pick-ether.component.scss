@@ -1,17 +1,52 @@
-@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&family=Skranji&display=swap');  //  font-family: 'Mochiy Pop One', sans-serif;  font-family: 'Skranji', cursive;   contenue description
-@import url('https://fonts.googleapis.com/css2?family=Henny+Penny&display=swap');// font-family: 'Henny Penny', cursive;   H2
- 
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&family=Skranji&display=swap'); //  font-family: 'Mochiy Pop One', sans-serif;  font-family: 'Skranji', cursive;   contenue description
+@import url('https://fonts.googleapis.com/css2?family=Henny+Penny&display=swap'); // font-family: 'Henny Penny', cursive;   H2
+
 .pickether-card {
-    width: 35%;
-    img {
-      width: 100%;
+  width: 45%;
+  box-sizing: border-box;
+  margin: 20px auto;
+  padding: 12px 32px;
+  box-shadow: lightgray 4px 4px 20px;
+  img {
+    width: 100%;
+  }
+}
+
+h2 {
+  font-family: 'Henny Penny', cursive;
+  margin-bottom: -10px;
+}
+
+p {
+  font-family: 'Mochiy Pop One', sans-serif;
+  // font-family: 'Skranji', cursive;
+  
+}
+
+button{
+  background-color: transparent;
+  box-sizing: border-box;
+  padding: 5px 10px ;
+  border: none;
+  box-shadow: lightcoral 3px 3px 7px;
+  margin-right: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  &:active{
+    transform: translate(1px, 1px);
+  }
+}
+
+
+.pickether{
+  background-color: rgba(lightgreen, 0.4);
+  color: darkgreen !important;
+
+  button{
+    box-shadow: lightgreen 3px 3px 7px;
+    color: darkgreen;
+    &:active{
+      box-shadow: lightgreen 0 0 5px;
     }
   }
-
-  h2 {
-    font-family: 'Henny Penny', cursive;
-  }
-  p {
-    font-family: 'Mochiy Pop One', sans-serif;
-    // font-family: 'Skranji', cursive;
-  }
+}

@@ -1,10 +1,12 @@
-export class pickEther{
+export class pickEtherModel{
     title : any = String;   //peut être déclaré de ces 2 manières
     description!: string;
     createdDate!: Date;
     like!: number;
     urlImg!: string;
     location?: string;
+    goutte?: number;
+    price?: number;
     
 //     constructor(title:string, description: string, createdDate: Date, like:number, urlImg:string){
 //         this.title = title;

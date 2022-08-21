@@ -1,15 +1,24 @@
-<div class="pickether-card">
-    <h2>{{ pickEther.title }}</h2>
-    <p>Mis en ligne le {{  pickEther.createdDate }}</p>
+<div class="pickether-card " [ngClass]="{pickether: txtButtonLike != 'Like it Jusqu\'à la lune'}">
+    
+    <h2>{{ pickEther.title | titlecase  }}</h2> <!-- {{stringinterpolation variable (pipe uniquement {{}})-> |  formatageVoulu  lowercase   uppercase }}-->
+    <p>satisfaisante pick {{0.991000 | percent:'1.2-2'}}</p> <!-- | percent :'nombreMinimumAvantVirgule.nombreMinimumAprèsVirgule-nombreMaximumAprèsVirgule'  -->
+    <p>Dernière consultation {{  pickEther.createdDate | date : 'le d MMMM yyyy à HH:mm'}}</p> <!-- https://angular.io/api/common/DatePipe -->
     <img [src]=" pickEther.urlImg" [alt]=" pickEther.title">
     <!--  les valeurs associées à des attributs ne seront pas toujours des strings il est préférable d'avoir une syntaxe unique pour une fonctionnalité. On va donc préférer les crochets  []  : -->
     <p *ngIf="pickEther.location">   Photo prise     {{  pickEther.location }}</p>
     <p>{{  pickEther.description }}</p>
+    <p *ngIf="pickEther.goutte"> Gouttes tombées {{  pickEther.goutte | number}}</p>  <!-- valeur var bdd:651566285  sortie après | number  651 566 285 -->
+    
+
+    <p> nombre préféré {{215785852.43791 | number :'1.0-2'}}</p> <!-- | number :'nombreMinimumAvantVirgule.nombreMinimumAprèsVirgule-nombreMaximumAprèsVirgule'  -->
+
+    <p>{{  pickEther.price | currency: 'EUR' : 'code' }}</p>
     <p>
         <button (click)="onLike()">
             {{ txtButtonLike }}
         </button>
         
-        🧑🏿‍🚀 {{  pickEther.like }}
+       <span [ngStyle]="{color: 'rgb(230,'+ pickEther.like +',89)'}">🧑🏿‍🚀 {{  pickEther.like }}</span> 
     </p>
+
 </div>

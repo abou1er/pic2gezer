@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { pickEther } from '../models/pick-ether.model';
+import { pickEtherModel } from '../models/pick-ether.model';
 
 @Component({
   selector: 'app-pick-ether',
@@ -8,24 +8,27 @@ import { pickEther } from '../models/pick-ether.model';
 })
 export class PickEtherComponent  implements OnInit{
 
-@Input() pickEther! : pickEther;
+@Input() pickEther! : pickEtherModel;  
+// va permettre d'appeler caractéristique de lobjet exepmle: // this.pickEther.description = "Palmier de secours"; this.pickEther.like++;    //like++ limité à une fois
 
   title : any = String;   //peut être déclaré de ces 2 manières
-  description!: string;
-  createdDate!: Date;
-  like!: number;
-  urlImg!: string;
+  description!: string;  //*** */
+  createdDate!: Date;    //***ces info sont mtn récup dans app.component.ts */
+  like!: number;         //*** */
+  urlImg!: string;       //***
+
+
   txtButtonLike!: string;
 
 
   // constructor() { }
 
   ngOnInit(): void {
-    this.title = "Fraisouw";
-    this.description = "Palmier de secours";
-    this.createdDate = new Date(); // s'auto Datera à l'instant ou l'instance est généré
-    this.like = 8;
-    this.urlImg = "../../assets/img/01-fraisealombre.jpg";
+    // this.title = "Fraisouw";
+    // this.pickEther.description = "Palmier de secours";
+    // this.createdDate = new Date(); // s'auto Datera à l'instant ou l'instance est généré
+    // this.like = 8;
+    // this.urlImg = "../../assets/img/01-fraisealombre.jpg";
     this.txtButtonLike = "Like it Jusqu'à la lune";
 
   }
@@ -34,7 +37,7 @@ export class PickEtherComponent  implements OnInit{
   onLike(){  // event-bidind  method qui agi pour créer un événement le nom de la methode commence par 'on'
     //this.like++     // like type number Va s'incrémenter à chaque appel. tel quel non limité 
     if (this.txtButtonLike === "Like it Jusqu'à la lune"){
-      this.pickEther.like++;    //like limité à une fois
+      this.pickEther.like++;    //like++ limité à une fois
       this.txtButtonLike = "J'aime moins";  //puis je change sa valeur
     } else {
       this.pickEther.like--;

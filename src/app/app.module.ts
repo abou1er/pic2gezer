@@ -1,5 +1,8 @@
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+
+import { registerLocaleData } from "@angular/common";
+import * as fr from '@angular/common/locales/fr';
 
 import { AppComponent } from './app.component';
 import { PickEtherComponent } from './pick-ether/pick-ether.component';
@@ -12,7 +15,13 @@ import { PickEtherComponent } from './pick-ether/pick-ether.component';
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [
+    {provide: LOCALE_ID, useValue: 'fr-FR'}
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+  constructor(){  // ajoute un construct à l'intérieur jappel la methode importé
+    registerLocaleData(fr.default);
+  }
+}

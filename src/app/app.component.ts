@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { pickEther } from './models/pick-ether.model';
+import { pickEtherModel } from './models/pick-ether.model';
 
 @Component({
   selector: 'app-root',
@@ -7,7 +7,7 @@ import { pickEther } from './models/pick-ether.model';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit{
-  myPicks : any = pickEther ;  
+  myPicks : any = pickEtherModel ;  
   // myPicks : any  ; fonctionne aussi
 
   ngOnInit(): void {
@@ -15,9 +15,10 @@ export class AppComponent implements OnInit{
       title: 'Fraisouw',
       description: "Palmier de secours",
       createdDate!: new Date(),
-      like: 0,
+      like: 240,
       urlImg: "../../assets/img/01-fraisealombre.jpg",
-      location: 'Cap D\'Agde'
+      location: 'Cap D\'Agde',
+      price: 450.67
     },
 
     // this.myPick = new pickEther(      
@@ -27,12 +28,13 @@ export class AppComponent implements OnInit{
     //   0,
     //   "../../assets/img/01-fraisealombre.jpg")
  {
-      title: 'cocktail-cucumber-rose-soda',
+      title: 'cocktail cucumber rose soda',
       description: "La pétillance qui pétille",
       createdDate!: new Date(),
-      like: 0,
+      like: 48,
       urlImg: ".../../assets/img/02-cocktail-cucumber-rose-soda.gif",
       // localition: 'Los Angeles'
+      price: 236.28
     },
       // this.myPick2 = new pickEther(
       //   'cocktail-cucumber-rose-soda',
@@ -43,12 +45,14 @@ export class AppComponent implements OnInit{
       // )
 
      {
-        title: '03-fraise-water-summer',
+        title: '03 fraise water summer',
         description: "Rain de fraise",
         createdDate!: new Date(),
-        like: 0,
+        like: 15,
         urlImg: "../../assets/img/03-fraise-water-summer.gif",
-        location: 'Acapulco'
+        location: 'Acapulco',
+        goutte: 651566285,
+        price:785.78
       }
 
     ] 
