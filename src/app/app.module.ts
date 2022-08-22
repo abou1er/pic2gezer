@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { PickEtherComponent } from './pick-ether/pick-ether.component';
 import { PickEtherListComponent } from './pick-ether-list/pick-ether-list.component';
 import { HeaderComponent } from './header/header.component';
+import { AppRoutingModule } from './app.routing.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { HeaderComponent } from './header/header.component';
     HeaderComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [
     {provide: LOCALE_ID, useValue: 'fr-FR'}

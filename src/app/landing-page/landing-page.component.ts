@@ -3,11 +3,11 @@ import { pickEtherModel } from '../models/pick-ether.model';
 import { PickEtherService } from '../services/pick-ether.service';
 
 @Component({
-  selector: 'app-pick-ether',
-  templateUrl: './pick-ether.component.html',
-  styleUrls: ['./pick-ether.component.scss']
+  selector: 'app-landing-page',
+  templateUrl: './landing-page.component.html',
+  styleUrls: ['./landing-page.component.scss']
 })
-export class PickEtherComponent  implements OnInit{
+export class LandingPageComponent  implements OnInit{
 
 @Input() pickEther! : pickEtherModel;  
 // va permettre d'appeler caractéristique de lobjet exepmle: // this.pickEther.description = "Palmier de secours"; this.pickEther.like++;    //like++ limité à une fois

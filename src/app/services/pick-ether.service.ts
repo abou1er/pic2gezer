@@ -7,8 +7,10 @@ import { pickEtherModel } from '../models/pick-ether.model';
 
 export class PickEtherService{
     mypicks: any = pickEtherModel;
-    
+
     myPicks = [{
+
+        id:1,
         title: 'Fraisouw',
         description: "Palmier de secours",
         createdDate!: new Date(),
@@ -25,6 +27,7 @@ export class PickEtherService{
       //   0,
       //   "../../assets/img/01-fraisealombre.jpg")
    {
+        id:2,
         title: 'cocktail cucumber rose soda',
         description: "La pétillance qui pétille",
         createdDate!: new Date(),
@@ -42,6 +45,7 @@ export class PickEtherService{
         // )
   
        {
+          id:3,
           title: '03 fraise water summer',
           description: "Rain de fraise",
           createdDate!: new Date(),
@@ -53,17 +57,29 @@ export class PickEtherService{
         }
   
       ] 
-    // this.myPick3 = new pickEther(
-    //   '03-fraise-water-summer',
-    //   "Rain de fraise",
-    //   new Date(),
-    //   0,
-    //   "../../assets/img/03-fraise-water-summer.gif"
-    // )
-  
+
   
 //   console.log(this.myPicks);
-  
-  
+getAllPicks(){
+    return this.myPicks;
+  }
+
+
+  getPickById(myPickId: number): pickEtherModel {
+    const pick = this.myPicks.find(pick => pick.id === myPickId);
+
+    if (!pick){
+        throw new Error("Aucune pick correspondant à cette id!");
+        
+    }else{
+        return pick   
+    }
+ } 
+
+ getLikePickById(myPickId: number, likeType: 'like' | 'unlike'): void {
+    const pick = this.getPickById(myPickId); //utilise la methode getbyid
+    likeType === 'like' ? pick.like++ : pick.like--;  //va ajoute +1 ou -1
+ }                                                    //likeType: 'like' | 'unlike'
+                                                     //likeType === 'like' ? pick.like++ : pick.like--;
     }
   

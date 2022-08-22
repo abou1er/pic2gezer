@@ -15,10 +15,9 @@ export class PickEtherListComponent implements OnInit {
   // myPicks : any  ; fonctionne aussi
 
   ngOnInit(): void {
-    this.myPicks = this.pickEtherService.myPicks;
-
-  
-
+    this.myPicks = this.pickEtherService.getAllPicks();
 
 }
+
+
 }

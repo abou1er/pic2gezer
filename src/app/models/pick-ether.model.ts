@@ -1,4 +1,5 @@
 export class pickEtherModel{
+    id!: number;
     title : any = String;   //peut être déclaré de ces 2 manières
     description!: string;
     createdDate!: Date;
