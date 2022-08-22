@@ -6,11 +6,15 @@ import * as fr from '@angular/common/locales/fr';
 
 import { AppComponent } from './app.component';
 import { PickEtherComponent } from './pick-ether/pick-ether.component';
+import { PickEtherListComponent } from './pick-ether-list/pick-ether-list.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PickEtherComponent
+    PickEtherComponent,
+    PickEtherListComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule
